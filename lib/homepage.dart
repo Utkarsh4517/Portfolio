@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:awesome_icons/awesome_icons.dart';
+import 'package:portfolio1/components/linear_gradient_text.dart';
 
 class HomePage extends StatelessWidget {
   const HomePage({super.key});
@@ -9,10 +10,15 @@ class HomePage extends StatelessWidget {
   Widget build(BuildContext context) {
     double screenWidth = MediaQuery.of(context).size.width;
     final headingActualTextSize = screenWidth * 0.05;
+    final bodyActualTextSize = screenWidth * 0.01;
     const double minTextSize = 50.0;
     const double maxTextSize = 100.0;
+    const double bodyminTextSize = 30.0;
+    const double bodymaxTextSize = 55.0;
     final double fontSizeToSet =
         headingActualTextSize.clamp(minTextSize, maxTextSize);
+    final double bodyfontSizeToSet =
+        bodyActualTextSize.clamp(bodyminTextSize, bodymaxTextSize);
     return Scaffold(
       backgroundColor: Colors.black,
       body: SingleChildScrollView(
@@ -26,7 +32,9 @@ class HomePage extends StatelessWidget {
             child: Column(
               mainAxisSize: MainAxisSize.max,
               children: [
-                const SizedBox(height: 25,),
+                const SizedBox(
+                  height: 25,
+                ),
                 Row(
                   children: [
                     const Align(
@@ -75,26 +83,8 @@ class HomePage extends StatelessWidget {
                   alignment: const AlignmentDirectional(-1, 0),
                   child: Padding(
                     padding: const EdgeInsets.only(left: 20.0, right: 20),
-                    child: Text(
-                      "utkarsh shrivastava",
-                      maxLines: 2,
-                      // ignore: unnecessary_new
-                      style: new TextStyle(
-                        fontSize: fontSizeToSet,
-                        fontWeight: FontWeight.bold,
-                        foreground: Paint()
-                          ..shader = const LinearGradient(
-                            colors: <Color>[
-                              Colors.pinkAccent,
-                              Colors.deepPurpleAccent,
-                              Colors.red
-                              //add more color here.
-                            ],
-                          ).createShader(
-                            const Rect.fromLTWH(0.0, 0.0, 1000.0, 100.0),
-                          ),
-                      ),
-                    ),
+                    child: LgText(
+                        text: "utkarsh shrivastava", fontsize: fontSizeToSet),
                   ),
                 ),
                 const SizedBox(
@@ -114,14 +104,69 @@ class HomePage extends StatelessWidget {
                     ),
                   ),
                 ),
-                const SizedBox(height: 25,),
-                const Divider(color: Colors.white, thickness: 10,),
-                const SizedBox(height: 25,),
+                const SizedBox(
+                  height: 25,
+                ),
+                const SizedBox(
+                  height: 25,
+                ),
+                LgText(text: "Projects", fontsize: bodyfontSizeToSet),
+                const SizedBox(
+                  height: 25,
+                ),
+                Column(
+                  children: [
+                    Row(
+                      mainAxisAlignment: MainAxisAlignment.center,
+                      children: [
+                        Column(
+                          children: [
+                            Container(
+                              height: 250,
+                              width: 400,
+                              padding: const EdgeInsets.all(20),
+                              child: Card(
+                                elevation: 50,
+                                shadowColor:
+                                    const Color.fromARGB(255, 173, 19, 201),
+                                shape: RoundedRectangleBorder(
+                                    borderRadius: BorderRadius.circular(25.0)),
+                              ),
+                            ),
+                            Container(
+                              height: 250,
+                              width: 400,
+                              padding: const EdgeInsets.all(20),
+                              child: Card(
+                                elevation: 50,
+                                shadowColor:
+                                    const Color.fromARGB(255, 173, 19, 201),
+                                shape: RoundedRectangleBorder(
+                                    borderRadius: BorderRadius.circular(25.0)),
+                              ),
+                            ),
+                            Container(
+                              height: 250,
+                              width: 400,
+                              padding: const EdgeInsets.all(20),
+                              child: Card(
+                                elevation: 50,
+                                shadowColor:
+                                    const Color.fromARGB(255, 173, 19, 201),
+                                shape: RoundedRectangleBorder(
+                                    borderRadius: BorderRadius.circular(25.0)),
+                              ),
+                            ),
+                          ],
+                        )
+                      ],
+                    ),
+                  ],
+                )
               ],
             ),
           ),
         ),
-        
       ),
     );
   }
