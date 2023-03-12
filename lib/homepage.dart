@@ -1,8 +1,10 @@
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:awesome_icons/awesome_icons.dart';
+import 'package:portfolio1/components/card_container.dart';
 import 'package:portfolio1/components/linear_gradient_text.dart';
 import 'package:responsive_framework/responsive_framework.dart';
+
 
 class HomePage extends StatelessWidget {
   const HomePage({super.key});
@@ -122,47 +124,45 @@ class HomePage extends StatelessWidget {
                   layout: ResponsiveWrapper.of(context).isSmallerThan(DESKTOP)
                       ? ResponsiveRowColumnType.COLUMN
                       : ResponsiveRowColumnType.ROW,
-                  children: [
+                  children:const  [
                     ResponsiveRowColumnItem(
-                      child: Container(
-                        height: 250,
-                        width: 400,
-                        padding: const EdgeInsets.all(20),
-                        child: Card(
-                          elevation: 50,
-                          shadowColor: const Color.fromARGB(255, 173, 19, 201),
-                          shape: RoundedRectangleBorder(
-                              borderRadius: BorderRadius.circular(25.0)),
-                        ),
-                      ),
+                      rowFlex: 1,
+                      child: ContainerCustom(),
                     ),
 
-                     ResponsiveRowColumnItem(
-                      child: Container(
-                        height: 250,
-                        width: 400,
-                        padding: const EdgeInsets.all(20),
-                        child: Card(
-                          elevation: 50,
-                          shadowColor: const Color.fromARGB(255, 173, 19, 201),
-                          shape: RoundedRectangleBorder(
-                              borderRadius: BorderRadius.circular(25.0)),
-                        ),
-                      ),
+                    ResponsiveRowColumnItem(
+                      rowFlex: 1,
+                      child: ContainerCustom(),
                     ),
 
-                     ResponsiveRowColumnItem(
-                      child: Container(
-                        height: 250,
-                        width: 400,
-                        padding: const EdgeInsets.all(20),
-                        child: Card(
-                          elevation: 50,
-                          shadowColor: const Color.fromARGB(255, 173, 19, 201),
-                          shape: RoundedRectangleBorder(
-                              borderRadius: BorderRadius.circular(25.0)),
-                        ),
-                      ),
+                    ResponsiveRowColumnItem(
+                      rowFlex: 1,
+                      child: ContainerCustom(),
+                    ),
+                  ],
+                ),
+
+                ResponsiveRowColumn(
+                  rowMainAxisAlignment: MainAxisAlignment.center,
+                  rowPadding: const EdgeInsets.all(30),
+                  columnPadding: const EdgeInsets.all(30),
+                  layout: ResponsiveWrapper.of(context).isSmallerThan(DESKTOP)
+                      ? ResponsiveRowColumnType.COLUMN
+                      : ResponsiveRowColumnType.ROW,
+                  children: const [
+                    ResponsiveRowColumnItem(
+                      rowFlex: 1,
+                      child: ContainerCustom(),
+                    ),
+
+                    ResponsiveRowColumnItem(
+                      rowFlex: 1,
+                      child: ContainerCustom(),
+                    ),
+
+                    ResponsiveRowColumnItem(
+                      rowFlex: 1,
+                      child: ContainerCustom(),
                     ),
                   ],
                 ),
