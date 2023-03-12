@@ -9,9 +9,18 @@ class MyApp extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return const MaterialApp(
+    return MaterialApp(
       debugShowCheckedModeBanner: false,
-      home: HomePage(),
+      builder: (context, child) => ResponsiveWrapper.builder(
+        child,
+        
+        minWidth: 480,
+        defaultScale: false,
+        breakpoints: const [
+          ResponsiveBreakpoint.resize(1000, name: DESKTOP),
+        ],
+      ),
+      home: const HomePage(),
     );
   }
 }

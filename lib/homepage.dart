@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:awesome_icons/awesome_icons.dart';
 import 'package:portfolio1/components/linear_gradient_text.dart';
+import 'package:responsive_framework/responsive_framework.dart';
 
 class HomePage extends StatelessWidget {
   const HomePage({super.key});
@@ -114,55 +115,57 @@ class HomePage extends StatelessWidget {
                 const SizedBox(
                   height: 25,
                 ),
-                Column(
+                ResponsiveRowColumn(
+                  rowMainAxisAlignment: MainAxisAlignment.center,
+                  rowPadding: const EdgeInsets.all(30),
+                  columnPadding: const EdgeInsets.all(30),
+                  layout: ResponsiveWrapper.of(context).isSmallerThan(DESKTOP)
+                      ? ResponsiveRowColumnType.COLUMN
+                      : ResponsiveRowColumnType.ROW,
                   children: [
-                    Row(
-                      mainAxisAlignment: MainAxisAlignment.center,
-                      children: [
-                        Column(
-                          children: [
-                            Container(
-                              height: 250,
-                              width: 400,
-                              padding: const EdgeInsets.all(20),
-                              child: Card(
-                                elevation: 50,
-                                shadowColor:
-                                    const Color.fromARGB(255, 173, 19, 201),
-                                shape: RoundedRectangleBorder(
-                                    borderRadius: BorderRadius.circular(25.0)),
-                              ),
-                            ),
-                            Container(
-                              height: 250,
-                              width: 400,
-                              padding: const EdgeInsets.all(20),
-                              child: Card(
-                                elevation: 50,
-                                shadowColor:
-                                    const Color.fromARGB(255, 173, 19, 201),
-                                shape: RoundedRectangleBorder(
-                                    borderRadius: BorderRadius.circular(25.0)),
-                              ),
-                            ),
-                            Container(
-                              height: 250,
-                              width: 400,
-                              padding: const EdgeInsets.all(20),
-                              child: Card(
-                                elevation: 50,
-                                shadowColor:
-                                    const Color.fromARGB(255, 173, 19, 201),
-                                shape: RoundedRectangleBorder(
-                                    borderRadius: BorderRadius.circular(25.0)),
-                              ),
-                            ),
-                          ],
+                    ResponsiveRowColumnItem(
+                      child: Container(
+                        height: 250,
+                        width: 400,
+                        padding: const EdgeInsets.all(20),
+                        child: Card(
+                          elevation: 50,
+                          shadowColor: const Color.fromARGB(255, 173, 19, 201),
+                          shape: RoundedRectangleBorder(
+                              borderRadius: BorderRadius.circular(25.0)),
                         ),
-                      ],
+                      ),
+                    ),
+
+                     ResponsiveRowColumnItem(
+                      child: Container(
+                        height: 250,
+                        width: 400,
+                        padding: const EdgeInsets.all(20),
+                        child: Card(
+                          elevation: 50,
+                          shadowColor: const Color.fromARGB(255, 173, 19, 201),
+                          shape: RoundedRectangleBorder(
+                              borderRadius: BorderRadius.circular(25.0)),
+                        ),
+                      ),
+                    ),
+
+                     ResponsiveRowColumnItem(
+                      child: Container(
+                        height: 250,
+                        width: 400,
+                        padding: const EdgeInsets.all(20),
+                        child: Card(
+                          elevation: 50,
+                          shadowColor: const Color.fromARGB(255, 173, 19, 201),
+                          shape: RoundedRectangleBorder(
+                              borderRadius: BorderRadius.circular(25.0)),
+                        ),
+                      ),
                     ),
                   ],
-                )
+                ),
               ],
             ),
           ),
