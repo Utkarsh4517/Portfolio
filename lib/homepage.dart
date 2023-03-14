@@ -176,6 +176,44 @@ class HomePage extends StatelessWidget {
                     ),
                   ],
                 ),
+                Column(
+                  children: [
+                    Align(
+                      alignment: const AlignmentDirectional(0, 0),
+                      child:
+                          LgText(text: 'Connect', fontsize: bodyfontSizeToSet),
+                    ),
+                    const SizedBox(
+                      height: 50,
+                    ),
+                    Row(
+                      mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                      children: [
+                        IconButton(
+                          onPressed: () {},
+                          icon: const Icon(
+                            FontAwesomeIcons.github,
+                            color: Colors.white,
+                          ),
+                        ),
+                        IconButton(
+                          onPressed: () {},
+                          icon: const Icon(
+                            FontAwesomeIcons.twitter,
+                            color: Colors.white,
+                          ),
+                        ),
+                        IconButton(
+                          onPressed: () {},
+                          icon: const Icon(
+                            FontAwesomeIcons.linkedin,
+                            color: Colors.white,
+                          ),
+                        ),
+                      ],
+                    )
+                  ],
+                )
               ],
             ),
           ),
