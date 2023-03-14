@@ -1,10 +1,11 @@
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:awesome_icons/awesome_icons.dart';
+import 'package:portfolio1/components/animated_text_container.dart';
 import 'package:portfolio1/components/card_container.dart';
+import 'package:portfolio1/components/hover_container.dart';
 import 'package:portfolio1/components/linear_gradient_text.dart';
 import 'package:responsive_framework/responsive_framework.dart';
-
 
 class HomePage extends StatelessWidget {
   const HomePage({super.key});
@@ -39,27 +40,41 @@ class HomePage extends StatelessWidget {
                   height: 25,
                 ),
                 Row(
+                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
                   children: [
-                    const Align(
-                      alignment: AlignmentDirectional(-1, 0),
-                      child: Padding(
-                        padding: EdgeInsets.all(20),
-                        child: Icon(
-                          Icons.headphones,
-                          color: Colors.white,
+                    Row(
+                      children: [
+                        const Align(
+                          alignment: AlignmentDirectional(-1, 0),
+                          child: Padding(
+                            padding: EdgeInsets.all(20),
+                            child: Icon(
+                              Icons.headphones,
+                              color: Colors.white,
+                            ),
+                          ),
                         ),
-                      ),
+                        Align(
+                          alignment: const AlignmentDirectional(-1, 0),
+                          child: Text(
+                            'utkarsh shrivastava',
+                            style: GoogleFonts.dancingScript(
+                              textStyle: const TextStyle(color: Colors.white),
+                              fontWeight: FontWeight.w100,
+                              fontSize: 20,
+                            ),
+                          ),
+                        ),
+                      ],
                     ),
-                    Align(
-                      alignment: const AlignmentDirectional(-1, 0),
-                      child: Text(
-                        'utkarsh shrivastava',
-                        style: GoogleFonts.dancingScript(
-                          textStyle: const TextStyle(color: Colors.white),
-                          fontWeight: FontWeight.w100,
-                          fontSize: 20,
+                    Row(
+                      children: const [
+                        TextContainer(text: 'Connect'),
+                        SizedBox(
+                          width: 10,
                         ),
-                      ),
+                        TextContainer(text: 'Projects'),
+                      ],
                     ),
                   ],
                 ),
@@ -124,24 +139,21 @@ class HomePage extends StatelessWidget {
                   layout: ResponsiveWrapper.of(context).isSmallerThan(DESKTOP)
                       ? ResponsiveRowColumnType.COLUMN
                       : ResponsiveRowColumnType.ROW,
-                  children:const  [
+                  children: const [
                     ResponsiveRowColumnItem(
                       rowFlex: 1,
-                      child: ContainerCustom(),
+                      child: HoverContainer(width: 400, height: 250),
                     ),
-
                     ResponsiveRowColumnItem(
                       rowFlex: 1,
-                      child: ContainerCustom(),
+                      child: HoverContainer(width: 400, height: 250),
                     ),
-
                     ResponsiveRowColumnItem(
                       rowFlex: 1,
-                      child: ContainerCustom(),
+                      child: HoverContainer(width: 400, height: 250),
                     ),
                   ],
                 ),
-
                 ResponsiveRowColumn(
                   rowMainAxisAlignment: MainAxisAlignment.center,
                   rowPadding: const EdgeInsets.all(30),
@@ -152,17 +164,15 @@ class HomePage extends StatelessWidget {
                   children: const [
                     ResponsiveRowColumnItem(
                       rowFlex: 1,
-                      child: ContainerCustom(),
+                      child: HoverContainer(width: 400, height: 250),
                     ),
-
                     ResponsiveRowColumnItem(
                       rowFlex: 1,
-                      child: ContainerCustom(),
+                      child: HoverContainer(width: 400, height: 250),
                     ),
-
                     ResponsiveRowColumnItem(
                       rowFlex: 1,
-                      child: ContainerCustom(),
+                      child: HoverContainer(width: 400, height: 250),
                     ),
                   ],
                 ),
