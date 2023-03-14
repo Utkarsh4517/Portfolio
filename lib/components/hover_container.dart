@@ -1,18 +1,17 @@
 import 'package:flutter/material.dart';
-
+import 'package:awesome_icons/awesome_icons.dart';
 
 class HoverContainer extends StatefulWidget {
   final double width;
   final double height;
   final String imagePath;
 
-  const HoverContainer(
-      {
-      required this.width,
-      required this.height,
-      required this.imagePath,
-      super.key,
-      });
+  const HoverContainer({
+    required this.width,
+    required this.height,
+    required this.imagePath,
+    super.key,
+  });
 
   @override
   // ignore: library_private_types_in_public_api
@@ -29,7 +28,6 @@ class _HoverContainerState extends State<HoverContainer> {
           _isHovering = true;
         });
       },
-
       onDoubleTap: () {
         setState(() {
           _isHovering = false;
@@ -53,17 +51,42 @@ class _HoverContainerState extends State<HoverContainer> {
           height: _isHovering ? widget.height * 1.1 : widget.height,
           child: Card(
             color: Colors.black,
-            elevation: 50,
+            elevation: 80,
             shadowColor: const Color.fromARGB(255, 173, 19, 201),
             shape: RoundedRectangleBorder(
                 borderRadius: BorderRadius.circular(25.0)),
-                child: Column(
-                  mainAxisAlignment: MainAxisAlignment.end,
-                  crossAxisAlignment: CrossAxisAlignment.center,
-                  children: [
-                    Image.asset(widget.imagePath),
-                  ],
+            child: Expanded(
+              child: Column(
+                mainAxisAlignment: MainAxisAlignment.end,
+                crossAxisAlignment: CrossAxisAlignment.center,
+                children: [
+                  Visibility(
+                  visible: _isHovering ? true : false,
+                  child: Row(
+                    crossAxisAlignment: CrossAxisAlignment.end,
+                    children: [
+                      IconButton(
+                        onPressed: () {},
+                        icon: const Icon(
+                          FontAwesomeIcons.github,
+                          color: Colors.white,
+                        ),
+                      ),
+                      IconButton(
+                        onPressed: () {},
+                        icon: const Icon(
+                          FontAwesomeIcons.link,
+                          color: Colors.white,
+                        ),
+                      ),
+                    ],
+                  ),
                 ),
+                
+                  Image.asset(widget.imagePath),
+                ],
+              ),
+            ),
           ),
         ),
       ),

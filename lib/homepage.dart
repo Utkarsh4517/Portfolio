@@ -6,7 +6,6 @@ import 'package:portfolio1/components/hover_container.dart';
 import 'package:portfolio1/components/linear_gradient_text.dart';
 import 'package:responsive_framework/responsive_framework.dart';
 
-
 class HomePage extends StatelessWidget {
   const HomePage({super.key});
 
@@ -68,7 +67,7 @@ class HomePage extends StatelessWidget {
                       ],
                     ),
                     ResponsiveVisibility(
-                      hiddenWhen:const [Condition.smallerThan(name: DESKTOP)],
+                      hiddenWhen: const [Condition.smallerThan(name: DESKTOP)],
                       child: Row(
                         children: const [
                           TextContainer(text: 'Connect'),
@@ -145,15 +144,26 @@ class HomePage extends StatelessWidget {
                   children: const [
                     ResponsiveRowColumnItem(
                       rowFlex: 1,
-                      child: HoverContainer(width: 400, height: 250, imagePath: 'assets/imag/E-commerce.png'),
+                      child: HoverContainer(
+                          width: 400,
+                          height: 280,
+                          imagePath: 'assets/imag/E-commerce.png'),
                     ),
                     ResponsiveRowColumnItem(
                       rowFlex: 1,
-                      child: HoverContainer(width: 400, height: 250, imagePath: 'assets/imag/portfolio.png',),
+                      child: HoverContainer(
+                        width: 400,
+                        height: 280,
+                        imagePath: 'assets/imag/portfolio.png',
+                      ),
                     ),
                     ResponsiveRowColumnItem(
                       rowFlex: 1,
-                      child: HoverContainer(width: 400, height: 250, imagePath: 'assets/imag/weatherastic.png',),
+                      child: HoverContainer(
+                        width: 400,
+                        height: 280,
+                        imagePath: 'assets/imag/weatherastic.png',
+                      ),
                     ),
                   ],
                 ),
@@ -167,46 +177,60 @@ class HomePage extends StatelessWidget {
                   children: const [
                     ResponsiveRowColumnItem(
                       rowFlex: 1,
-                      child: HoverContainer(width: 400, height: 250, imagePath: 'assets/imag/unity.jpeg',),
+                      child: HoverContainer(
+                        width: 400,
+                        height: 280,
+                        imagePath: 'assets/imag/unity.jpeg',
+                      ),
                     ),
                     ResponsiveRowColumnItem(
                       rowFlex: 1,
-                      child: HoverContainer(width: 400, height: 250, imagePath: '',),
+                      child: HoverContainer(
+                        width: 400,
+                        height: 280,
+                        imagePath: '',
+                      ),
                     ),
                     ResponsiveRowColumnItem(
                       rowFlex: 1,
-                      child: HoverContainer(width: 400, height: 250, imagePath: '',),
+                      child: HoverContainer(
+                        width: 400,
+                        height: 280,
+                        imagePath: '',
+                      ),
                     ),
                   ],
                 ),
                 Column(
-                      children: [
-                        const Text(
-                          'Have a Project? Let\'s Discuss',
-                          style: TextStyle(color: Colors.white),
-                        ),
-                        const SizedBox(
-                          height: 30,
-                        ),
-                        SizedBox(
-                          width: 300,
-                          child: TextField(
-                            decoration: InputDecoration(
-                              filled: true,
-                              fillColor: Colors.white,
-                              border: OutlineInputBorder(
-                                  borderRadius: BorderRadius.circular(10)),
-                              hintText: 'Enter your email',
-                            ),
-                          ),
-                        ),
-                        const SizedBox(
-                          height: 25,
-                        ),
-                        const TextContainer(text: 'Talk')
-                      ],
+                  children: [
+                    const Text(
+                      'Have a Project? Let\'s Discuss',
+                      style: TextStyle(color: Colors.white),
                     ),
-                    const SizedBox(height: 40,),
+                    const SizedBox(
+                      height: 30,
+                    ),
+                    SizedBox(
+                      width: 300,
+                      child: TextField(
+                        decoration: InputDecoration(
+                          filled: true,
+                          fillColor: Colors.white,
+                          border: OutlineInputBorder(
+                              borderRadius: BorderRadius.circular(10)),
+                          hintText: 'Enter your email',
+                        ),
+                      ),
+                    ),
+                    const SizedBox(
+                      height: 25,
+                    ),
+                    const TextContainer(text: 'Talk')
+                  ],
+                ),
+                const SizedBox(
+                  height: 40,
+                ),
                 Column(
                   children: [
                     Align(
@@ -246,7 +270,6 @@ class HomePage extends StatelessWidget {
                     const SizedBox(
                       height: 50,
                     ),
-                    
                   ],
                 )
               ],
