@@ -211,6 +211,12 @@ class HomePage extends StatelessWidget {
                           ),
                         ),
                       ],
+                    ),
+                    const SizedBox(height: 50,),
+                    Column(
+                      children: const [
+                        Text('Have a Project? Let\'s Discuss', style: TextStyle(color: Colors.white),)
+                      ],
                     )
                   ],
                 )
