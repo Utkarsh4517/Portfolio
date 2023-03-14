@@ -58,7 +58,7 @@ class _HoverContainerState extends State<HoverContainer> {
           height: _isHovering ? widget.height * 1.1 : widget.height,
           child: Card(
             color: Colors.black,
-            elevation: 80,
+            elevation: 50,
             shadowColor: const Color.fromARGB(255, 173, 19, 201),
             shape: RoundedRectangleBorder(
                 borderRadius: BorderRadius.circular(25.0)),
@@ -77,7 +77,7 @@ class _HoverContainerState extends State<HoverContainer> {
                           children: [
                             Text(
                               widget.title,
-                              style: const TextStyle(color: Colors.white),
+                              style:  TextStyle(color: Colors.pink[400]),
                             )
                           ],
                         ),

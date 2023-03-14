@@ -5,6 +5,7 @@ import 'package:portfolio1/components/animated_text_container.dart';
 import 'package:portfolio1/components/hover_container.dart';
 import 'package:portfolio1/components/linear_gradient_text.dart';
 import 'package:responsive_framework/responsive_framework.dart';
+import 'package:url_launcher/url_launcher_string.dart';
 
 class HomePage extends StatelessWidget {
   const HomePage({super.key});
@@ -39,7 +40,7 @@ class HomePage extends StatelessWidget {
                   height: 25,
                 ),
                 Row(
-                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                  mainAxisAlignment: MainAxisAlignment.start,
                   children: [
                     Row(
                       children: [
@@ -65,18 +66,6 @@ class HomePage extends StatelessWidget {
                           ),
                         ),
                       ],
-                    ),
-                    ResponsiveVisibility(
-                      hiddenWhen: const [Condition.smallerThan(name: DESKTOP)],
-                      child: Row(
-                        children: const [
-                          TextContainer(text: 'Connect'),
-                          SizedBox(
-                            width: 10,
-                          ),
-                          TextContainer(text: 'Projects'),
-                        ],
-                      ),
                     ),
                   ],
                 ),
@@ -193,7 +182,7 @@ class HomePage extends StatelessWidget {
                         imagePath: 'assets/imag/unity.jpeg',
                         gitLink: '',
                         link: '',
-                        title: 'Fun Arcade Game made with Unity (alpha stage)',
+                        title: 'Fun Arcade Game made with Unity (alpha)',
                       ),
                     ),
                     ResponsiveRowColumnItem(
@@ -218,33 +207,6 @@ class HomePage extends StatelessWidget {
                         title: 'Coming Soon!',
                       ),
                     ),
-                  ],
-                ),
-                Column(
-                  children: [
-                    const Text(
-                      'Have a Project? Let\'s Discuss',
-                      style: TextStyle(color: Colors.white),
-                    ),
-                    const SizedBox(
-                      height: 30,
-                    ),
-                    SizedBox(
-                      width: 300,
-                      child: TextField(
-                        decoration: InputDecoration(
-                          filled: true,
-                          fillColor: Colors.white,
-                          border: OutlineInputBorder(
-                              borderRadius: BorderRadius.circular(10)),
-                          hintText: 'Enter your email',
-                        ),
-                      ),
-                    ),
-                    const SizedBox(
-                      height: 25,
-                    ),
-                    const TextContainer(text: 'Talk')
                   ],
                 ),
                 const SizedBox(
@@ -264,21 +226,27 @@ class HomePage extends StatelessWidget {
                       mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                       children: [
                         IconButton(
-                          onPressed: () {},
+                          onPressed: () {
+                            launchUrlString('https://github.com/Utkarsh4517');
+                          },
                           icon: const Icon(
                             FontAwesomeIcons.github,
                             color: Colors.white,
                           ),
                         ),
                         IconButton(
-                          onPressed: () {},
+                          onPressed: () {
+                            launchUrlString('https://twitter.com/codeittutkarsh');
+                          },
                           icon: const Icon(
                             FontAwesomeIcons.twitter,
                             color: Colors.white,
                           ),
                         ),
                         IconButton(
-                          onPressed: () {},
+                          onPressed: () {
+                            launchUrlString('https://www.linkedin.com/in/utkarsh-shrivastava-7339041a0/');
+                          },
                           icon: const Icon(
                             FontAwesomeIcons.linkedin,
                             color: Colors.white,
