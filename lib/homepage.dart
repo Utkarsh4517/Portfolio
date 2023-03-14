@@ -2,10 +2,10 @@ import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:awesome_icons/awesome_icons.dart';
 import 'package:portfolio1/components/animated_text_container.dart';
-import 'package:portfolio1/components/card_container.dart';
 import 'package:portfolio1/components/hover_container.dart';
 import 'package:portfolio1/components/linear_gradient_text.dart';
 import 'package:responsive_framework/responsive_framework.dart';
+
 
 class HomePage extends StatelessWidget {
   const HomePage({super.key});
@@ -67,14 +67,17 @@ class HomePage extends StatelessWidget {
                         ),
                       ],
                     ),
-                    Row(
-                      children: const [
-                        TextContainer(text: 'Connect'),
-                        SizedBox(
-                          width: 10,
-                        ),
-                        TextContainer(text: 'Projects'),
-                      ],
+                    ResponsiveVisibility(
+                      hiddenWhen:const [Condition.smallerThan(name: DESKTOP)],
+                      child: Row(
+                        children: const [
+                          TextContainer(text: 'Connect'),
+                          SizedBox(
+                            width: 10,
+                          ),
+                          TextContainer(text: 'Projects'),
+                        ],
+                      ),
                     ),
                   ],
                 ),
@@ -177,6 +180,34 @@ class HomePage extends StatelessWidget {
                   ],
                 ),
                 Column(
+                      children: [
+                        const Text(
+                          'Have a Project? Let\'s Discuss',
+                          style: TextStyle(color: Colors.white),
+                        ),
+                        const SizedBox(
+                          height: 30,
+                        ),
+                        SizedBox(
+                          width: 300,
+                          child: TextField(
+                            decoration: InputDecoration(
+                              filled: true,
+                              fillColor: Colors.white,
+                              border: OutlineInputBorder(
+                                  borderRadius: BorderRadius.circular(10)),
+                              hintText: 'Enter your email',
+                            ),
+                          ),
+                        ),
+                        const SizedBox(
+                          height: 25,
+                        ),
+                        const TextContainer(text: 'Talk')
+                      ],
+                    ),
+                    const SizedBox(height: 40,),
+                Column(
                   children: [
                     Align(
                       alignment: const AlignmentDirectional(0, 0),
@@ -215,31 +246,7 @@ class HomePage extends StatelessWidget {
                     const SizedBox(
                       height: 50,
                     ),
-                    Column(
-                      children: [
-                        const Text(
-                          'Have a Project? Let\'s Discuss',
-                          style: TextStyle(color: Colors.white),
-                        ),
-                        const SizedBox(
-                          height: 30,
-                        ),
-                        SizedBox(
-                          width: 300,
-                          child: TextField(
-                            decoration: InputDecoration(
-                              filled: true,
-                              fillColor: Colors.white,
-                              border: OutlineInputBorder(
-                                  borderRadius: BorderRadius.circular(10)),
-                              hintText: 'Enter your email',
-                            ),
-                          ),
-                        ),
-                        const SizedBox(height: 25,),
-                        const TextContainer(text: 'Talk')
-                      ],
-                    )
+                    
                   ],
                 )
               ],
