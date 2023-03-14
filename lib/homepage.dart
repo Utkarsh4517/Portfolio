@@ -216,23 +216,28 @@ class HomePage extends StatelessWidget {
                       height: 50,
                     ),
                     Column(
-                      children: const [
-                         Text(
+                      children: [
+                        const Text(
                           'Have a Project? Let\'s Discuss',
                           style: TextStyle(color: Colors.white),
                         ),
-                        SizedBox(height: 30,),
+                        const SizedBox(
+                          height: 30,
+                        ),
                         SizedBox(
                           width: 300,
                           child: TextField(
                             decoration: InputDecoration(
                               filled: true,
-                              fillColor: Colors.grey,
-                              border: OutlineInputBorder(),
+                              fillColor: Colors.white,
+                              border: OutlineInputBorder(
+                                  borderRadius: BorderRadius.circular(10)),
                               hintText: 'Enter your email',
                             ),
                           ),
                         ),
+                        const SizedBox(height: 25,),
+                        const TextContainer(text: 'Talk')
                       ],
                     )
                   ],
