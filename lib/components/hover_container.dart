@@ -1,15 +1,22 @@
 import 'package:flutter/material.dart';
 import 'package:awesome_icons/awesome_icons.dart';
+import 'package:url_launcher/url_launcher_string.dart';
 
 class HoverContainer extends StatefulWidget {
   final double width;
   final double height;
   final String imagePath;
+  final String gitLink;
+  final String link;
+  final String title;
 
   const HoverContainer({
     required this.width,
     required this.height,
     required this.imagePath,
+    required this.gitLink,
+    required this.link,
+    required this.title,
     super.key,
   });
 
@@ -61,28 +68,44 @@ class _HoverContainerState extends State<HoverContainer> {
                 crossAxisAlignment: CrossAxisAlignment.center,
                 children: [
                   Visibility(
-                  visible: _isHovering ? true : false,
-                  child: Row(
-                    crossAxisAlignment: CrossAxisAlignment.end,
-                    children: [
-                      IconButton(
-                        onPressed: () {},
-                        icon: const Icon(
-                          FontAwesomeIcons.github,
-                          color: Colors.white,
+                    visible: _isHovering ? true : false,
+                    child: Row(
+                      mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                      crossAxisAlignment: CrossAxisAlignment.center,
+                      children: [
+                        Row(
+                          children: [
+                            Text(
+                              widget.title,
+                              style: const TextStyle(color: Colors.white),
+                            )
+                          ],
                         ),
-                      ),
-                      IconButton(
-                        onPressed: () {},
-                        icon: const Icon(
-                          FontAwesomeIcons.link,
-                          color: Colors.white,
+                        Row(
+                          children: [
+                            IconButton(
+                              onPressed: () {
+                                launchUrlString(widget.gitLink);
+                              },
+                              icon: const Icon(
+                                FontAwesomeIcons.github,
+                                color: Colors.white,
+                              ),
+                            ),
+                            IconButton(
+                              onPressed: () {
+                                launchUrlString(widget.link);
+                              },
+                              icon: const Icon(
+                                FontAwesomeIcons.link,
+                                color: Colors.white,
+                              ),
+                            ),
+                          ],
                         ),
-                      ),
-                    ],
+                      ],
+                    ),
                   ),
-                ),
-                
                   Image.asset(widget.imagePath),
                 ],
               ),
