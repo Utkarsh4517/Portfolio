@@ -145,15 +145,15 @@ class HomePage extends StatelessWidget {
                   children: const [
                     ResponsiveRowColumnItem(
                       rowFlex: 1,
-                      child: HoverContainer(width: 400, height: 250),
+                      child: HoverContainer(width: 400, height: 250, imagePath: 'assets/imag/E-commerce.png'),
                     ),
                     ResponsiveRowColumnItem(
                       rowFlex: 1,
-                      child: HoverContainer(width: 400, height: 250),
+                      child: HoverContainer(width: 400, height: 250, imagePath: 'assets/imag/portfolio.png',),
                     ),
                     ResponsiveRowColumnItem(
                       rowFlex: 1,
-                      child: HoverContainer(width: 400, height: 250),
+                      child: HoverContainer(width: 400, height: 250, imagePath: 'assets/imag/weatherastic.png',),
                     ),
                   ],
                 ),
@@ -167,15 +167,15 @@ class HomePage extends StatelessWidget {
                   children: const [
                     ResponsiveRowColumnItem(
                       rowFlex: 1,
-                      child: HoverContainer(width: 400, height: 250),
+                      child: HoverContainer(width: 400, height: 250, imagePath: 'assets/imag/unity.jpeg',),
                     ),
                     ResponsiveRowColumnItem(
                       rowFlex: 1,
-                      child: HoverContainer(width: 400, height: 250),
+                      child: HoverContainer(width: 400, height: 250, imagePath: '',),
                     ),
                     ResponsiveRowColumnItem(
                       rowFlex: 1,
-                      child: HoverContainer(width: 400, height: 250),
+                      child: HoverContainer(width: 400, height: 250, imagePath: '',),
                     ),
                   ],
                 ),

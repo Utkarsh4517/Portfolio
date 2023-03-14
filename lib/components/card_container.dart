@@ -1,26 +1,15 @@
 import 'package:flutter/material.dart';
 
-class ContainerCustom extends StatefulWidget {
-  const ContainerCustom({super.key});
+class CardContainer extends StatefulWidget {
+  const CardContainer({super.key});
 
   @override
-  State<ContainerCustom> createState() => _ContainerCustomState();
+  State<CardContainer> createState() => _CardContainerState();
 }
 
-class _ContainerCustomState extends State<ContainerCustom> {
-  var isHover = false;
+class _CardContainerState extends State<CardContainer> {
   @override
   Widget build(BuildContext context) {
-    return Container(
-      height: 250,
-      width: 400,
-      padding: const EdgeInsets.all(20),
-      child: Card(
-        elevation: 50,
-        shadowColor: const Color.fromARGB(255, 173, 19, 201),
-        shape:
-            RoundedRectangleBorder(borderRadius: BorderRadius.circular(25.0)),
-      ),
-    );
+    return Container();
   }
 }
