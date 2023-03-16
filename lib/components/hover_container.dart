@@ -1,3 +1,5 @@
+import 'dart:ui';
+
 import 'package:flutter/material.dart';
 import 'package:awesome_icons/awesome_icons.dart';
 import 'package:url_launcher/url_launcher_string.dart';
@@ -57,9 +59,9 @@ class _HoverContainerState extends State<HoverContainer> {
           width: _isHovering ? widget.width * 1.1 : widget.width,
           height: _isHovering ? widget.height * 1.1 : widget.height,
           child: Card(
-            color: Colors.black,
+            color: Colors.transparent,
             elevation: 50,
-            shadowColor: const Color.fromARGB(255, 173, 19, 201),
+            shadowColor:const Color.fromARGB(255, 122, 4, 151),
             shape: RoundedRectangleBorder(
                 borderRadius: BorderRadius.circular(25.0)),
               child: Column(
@@ -105,7 +107,7 @@ class _HoverContainerState extends State<HoverContainer> {
                       ],
                     ),
                   ),
-                  Image.asset(widget.imagePath),
+                  Image.asset(widget.imagePath,),
                 ],
               ),
           ),

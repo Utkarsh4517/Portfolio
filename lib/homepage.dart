@@ -3,7 +3,6 @@ import 'package:google_fonts/google_fonts.dart';
 import 'package:awesome_icons/awesome_icons.dart';
 import 'package:portfolio1/components/animated_text_container.dart';
 import 'package:portfolio1/components/hover_container.dart';
-import 'package:portfolio1/components/hover_containernew.dart';
 import 'package:portfolio1/components/linear_gradient_text.dart';
 import 'package:responsive_framework/responsive_framework.dart';
 import 'package:url_launcher/url_launcher_string.dart';
