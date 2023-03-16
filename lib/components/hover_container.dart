@@ -62,7 +62,6 @@ class _HoverContainerState extends State<HoverContainer> {
             shadowColor: const Color.fromARGB(255, 173, 19, 201),
             shape: RoundedRectangleBorder(
                 borderRadius: BorderRadius.circular(25.0)),
-            child: Expanded(
               child: Column(
                 mainAxisAlignment: MainAxisAlignment.end,
                 crossAxisAlignment: CrossAxisAlignment.center,
@@ -109,7 +108,6 @@ class _HoverContainerState extends State<HoverContainer> {
                   Image.asset(widget.imagePath),
                 ],
               ),
-            ),
           ),
         ),
       ),
